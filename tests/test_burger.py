@@ -1,9 +1,7 @@
 from unittest.mock import Mock
 
 from praktikum.burger import Burger, Bun
-from praktikum.ingredient_types import INGREDIENT_TYPE_FILLING, INGREDIENT_TYPE_SAUCE
-
-from input_data import BunData, FirstIngredientData, SecondIngredientData
+from input_data import *
 
 
 class TestBurger:
@@ -16,9 +14,9 @@ class TestBurger:
     def test_add_ingredient(self):
         burger = Burger()
         mock_ingredient = Mock()
-        mock_ingredient.name = FirstIngredientData.NAME
-        mock_ingredient.price = FirstIngredientData.PRICE
-        mock_ingredient.type = INGREDIENT_TYPE_SAUCE
+        mock_ingredient.name = SauceIngredientData.NAME
+        mock_ingredient.price = SauceIngredientData.PRICE
+        mock_ingredient.type = SauceIngredientData.TYPE
         burger.add_ingredient(mock_ingredient)
         assert burger.ingredients[0].name == mock_ingredient.name
         assert burger.ingredients[0].price == mock_ingredient.price
@@ -38,16 +36,16 @@ class TestBurger:
         mock_buns = Bun(BunData.NAME, BunData.PRICE)
 
         mock_first_ingredient = Mock()
-        mock_first_ingredient.name = FirstIngredientData.NAME
-        mock_first_ingredient.get_name.return_value = FirstIngredientData.NAME
-        mock_first_ingredient.get_price.return_value = FirstIngredientData.PRICE
-        mock_first_ingredient.get_type.return_value = INGREDIENT_TYPE_SAUCE
+        mock_first_ingredient.name = SauceIngredientData.NAME
+        mock_first_ingredient.get_name.return_value = SauceIngredientData.NAME
+        mock_first_ingredient.get_price.return_value = SauceIngredientData.PRICE
+        mock_first_ingredient.get_type.return_value = SauceIngredientData.TYPE
 
         mock_second_ingredient = Mock()
-        mock_second_ingredient.name = SecondIngredientData.NAME
-        mock_second_ingredient.get_name.return_value = SecondIngredientData.NAME
-        mock_second_ingredient.get_price.return_value = SecondIngredientData.PRICE
-        mock_second_ingredient.get_type.return_value = INGREDIENT_TYPE_FILLING
+        mock_second_ingredient.name = FillingIngredientData.NAME
+        mock_second_ingredient.get_name.return_value = FillingIngredientData.NAME
+        mock_second_ingredient.get_price.return_value = FillingIngredientData.PRICE
+        mock_second_ingredient.get_type.return_value = FillingIngredientData.TYPE
 
         burger.set_buns(mock_buns)
         burger.add_ingredient(mock_first_ingredient)
@@ -71,16 +69,16 @@ class TestBurger:
         mock_buns = Bun(BunData.NAME, BunData.PRICE)
 
         mock_first_ingredient = Mock()
-        mock_first_ingredient.name = FirstIngredientData.NAME
-        mock_first_ingredient.get_name.return_value = FirstIngredientData.NAME
-        mock_first_ingredient.get_price.return_value = FirstIngredientData.PRICE
-        mock_first_ingredient.get_type.return_value = INGREDIENT_TYPE_SAUCE
+        mock_first_ingredient.name = SauceIngredientData.NAME
+        mock_first_ingredient.get_name.return_value = SauceIngredientData.NAME
+        mock_first_ingredient.get_price.return_value = SauceIngredientData.PRICE
+        mock_first_ingredient.get_type.return_value = SauceIngredientData.TYPE
 
         mock_second_ingredient = Mock()
-        mock_second_ingredient.name = SecondIngredientData.NAME
-        mock_second_ingredient.get_name.return_value = SecondIngredientData.NAME
-        mock_second_ingredient.get_price.return_value = SecondIngredientData.PRICE
-        mock_second_ingredient.get_type.return_value = INGREDIENT_TYPE_FILLING
+        mock_second_ingredient.name = FillingIngredientData.NAME
+        mock_second_ingredient.get_name.return_value = FillingIngredientData.NAME
+        mock_second_ingredient.get_price.return_value = FillingIngredientData.PRICE
+        mock_second_ingredient.get_type.return_value = FillingIngredientData.TYPE
 
         burger.set_buns(mock_buns)
         burger.add_ingredient(mock_first_ingredient)
@@ -97,16 +95,16 @@ class TestBurger:
         mock_buns = Bun(BunData.NAME, BunData.PRICE)
 
         mock_first_ingredient = Mock()
-        mock_first_ingredient.name = FirstIngredientData.NAME
-        mock_first_ingredient.get_name.return_value = FirstIngredientData.NAME
-        mock_first_ingredient.get_price.return_value = FirstIngredientData.PRICE
-        mock_first_ingredient.get_type.return_value = INGREDIENT_TYPE_SAUCE
+        mock_first_ingredient.name = SauceIngredientData.NAME
+        mock_first_ingredient.get_name.return_value = SauceIngredientData.NAME
+        mock_first_ingredient.get_price.return_value = SauceIngredientData.PRICE
+        mock_first_ingredient.get_type.return_value = SauceIngredientData.TYPE
 
         mock_second_ingredient = Mock()
-        mock_second_ingredient.name = SecondIngredientData.NAME
-        mock_second_ingredient.get_name.return_value = SecondIngredientData.NAME
-        mock_second_ingredient.get_price.return_value = SecondIngredientData.PRICE
-        mock_second_ingredient.get_type.return_value = INGREDIENT_TYPE_FILLING
+        mock_second_ingredient.name = FillingIngredientData.NAME
+        mock_second_ingredient.get_name.return_value = FillingIngredientData.NAME
+        mock_second_ingredient.get_price.return_value = FillingIngredientData.PRICE
+        mock_second_ingredient.get_type.return_value = FillingIngredientData.TYPE
 
         burger.set_buns(mock_buns)
         burger.add_ingredient(mock_first_ingredient)
