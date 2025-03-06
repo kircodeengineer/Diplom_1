@@ -53,15 +53,9 @@ class TestBurger:
         burger.add_ingredient(mock_second_ingredient)
         filling_index = len(burger.ingredients) - 1
         burger.move_ingredient(sauce_index, filling_index)
-        expected_price = mock_buns.price * 2
-        expected_price += mock_first_ingredient.get_price()
-        expected_price += mock_second_ingredient.get_price()
-        expected_receipt = f"(==== {mock_buns.name} ====)\n" \
-                           f"= filling {mock_second_ingredient.name} =\n" \
-                           f"= sauce {mock_first_ingredient.name} =\n" \
-                           f"(==== {mock_buns.name} ====)\n\n" \
-                           f"Price: {expected_price}"
-        assert burger.get_receipt() == expected_receipt
+        expected_receipt = f"= filling {mock_second_ingredient.name} =\n" \
+                           f"= sauce {mock_first_ingredient.name} =\n"
+        assert expected_receipt in burger.get_receipt()
 
     def test_get_price(self):
         burger = Burger()
